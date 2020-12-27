@@ -1,0 +1,38 @@
+﻿@model Systematics.Task.Web.Models.Project
+
+@{
+    ViewData["Title"] = "Delete Project";
+}
+
+<div class="modal fade" id="deleteProject">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="editProjectLabel">Delete Project</h4>
+                <button type="button" class="close" data-dismiss="modal">
+                    <span>x</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <h3>Are you sure you want to delete @Model.Name?</h3>
+                <div>
+                    <form asp-action="Delete">
+                        <input type="hidden" asp-for="Id" />
+                    </form>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary" data-dismiss="modal">
+                    Close
+                </button>
+                <button type="button" class="btn btn-danger" data-save="modal">
+                    Delete
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
