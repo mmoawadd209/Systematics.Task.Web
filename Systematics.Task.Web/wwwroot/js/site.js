@@ -24,6 +24,8 @@ $(function () {
             $.post(actionUrl, sendData).done(function (data) {
 
                 placeHolderElement.find('.modal').modal('hide');
+                location.reload();
+
             })
         }) 
     })
